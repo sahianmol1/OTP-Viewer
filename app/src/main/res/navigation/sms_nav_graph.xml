@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/sms_nav_graph"
+    app:startDestination="@id/smsListFragment">
+
+    <fragment
+        android:id="@+id/smsListFragment"
+        android:name="com.anmol.otpviewer.ui.smslist.SmsListFragment"
+        android:label="SmsListFragment"
+        tools:layout="@layout/fragment_sms_list"
+        >
+        <action
+            android:id="@+id/action_smsListFragment_to_smsDetailsFragment"
+            app:destination="@id/smsDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/smsDetailsFragment"
+        android:name="com.anmol.otpviewer.ui.smsdetails.SmsDetailsFragment"
+        android:label="fragment_sms_details"
+        tools:layout="@layout/fragment_sms_details" >
+        <argument
+            android:name="smsData"
+            app:argType="com.anmol.otpviewer.ui.smslist.data.SMSData"
+            app:nullable="true"
+            android:defaultValue="@null" />
+    </fragment>
+</navigation>
